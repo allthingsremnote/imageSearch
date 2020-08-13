@@ -3,6 +3,7 @@ searchScript.onload = function(){
 document.getElementsByClassName("gsc-search-button gsc-search-button-v2")[0].click();
   
 
+
   window.__gcse || (window.__gcse = {});
 window.__gcse.searchCallbacks = {
   web: {
