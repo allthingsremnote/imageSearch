@@ -14,9 +14,12 @@ window.__gcse.searchCallbacks = {
     rendered: 'myWebResultsRenderedCallback',
   },
 };  
-}
+},900);
+  
+  
+  
 function myWebResultsRenderedCallback(x){
 console.log(document.getElementsByClassName("gsc-imageResult gsc-imageResult-popup gsc-result"));
   window.open(document.getElementsByClassName("gsc-imageResult gsc-imageResult-popup gsc-result")[5].children[0].children[0].children[0].children[0].children[0].src);
-  },900);
 };
+}
