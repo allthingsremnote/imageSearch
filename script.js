@@ -1,6 +1,8 @@
-      var page = 0;
-             var urlList = [];
 searchScript.onload = function(){
+function getImages(term){
+var page = 0;
+             var urlList = [];
+
  
        window.__gcse || (window.__gcse = {});
 window.__gcse.searchCallbacks = {
@@ -13,7 +15,7 @@ window.__gcse.searchCallbacks = {
 };
   setTimeout(function(){
    
-  document.getElementsByClassName("gsc-input")[2].value = location.hash.slice(1);
+  document.getElementsByClassName("gsc-input")[2].value = term;
 document.getElementsByClassName("gsc-search-button gsc-search-button-v2")[0].click();
   
 
@@ -37,3 +39,4 @@ document.getElementsByClassName("gsc-cursor")[0].children[page].click();
 top.postMessage(urlList,"*");
  }
 };
+}
