@@ -21,12 +21,12 @@ getImages(x.data.slice(2));
     page = 0;
     urlList = [];
 
-    setTimeout(function() {
+
       document.getElementsByClassName("gsc-input")[2].value = term;
       document
         .getElementsByClassName("gsc-search-button gsc-search-button-v2")[0]
         .click();
-    }, 900);
+
   }
 
 
