@@ -1,6 +1,7 @@
-searchScript.onload = function(){
-       var page = 0;
+      var page = 0;
              var urlList = [];
+searchScript.onload = function(){
+ 
        window.__gcse || (window.__gcse = {});
 window.__gcse.searchCallbacks = {
   web: {
