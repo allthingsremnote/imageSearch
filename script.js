@@ -23,6 +23,9 @@ document.getElementsByClassName("gsc-search-button gsc-search-button-v2")[0].cli
   
   
 function myWebResultsRenderedCallback(x){
-console.log(document.getElementsByClassName("gsc-imageResult gsc-imageResult-popup gsc-result"));
-  window.open(document.getElementsByClassName("gsc-imageResult gsc-imageResult-popup gsc-result")[5].children[0].children[0].children[0].children[0].children[0].src);
+       var urlList = [];
+       [...document.getElementsByClassName("gsc-imageResult gsc-imageResult-popup gsc-result")].forEach(function(j){
+       urlList.push(x.children[0].children[0].children[0].children[0].children[0].src);
+       })
+top.postMessage(urlList,"*");
 };
