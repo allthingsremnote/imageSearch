@@ -1,43 +1,52 @@
-searchScript.onload = function(){
-function getImages(term){
-var page = 0;
-             var urlList = [];
+  var page = 0;
+  var urlList = [];
+  
+searchScript.onload = function() {
+        window.__gcse.searchCallbacks = {
+      web: {
+        rendered: "myWebResultsRenderedCallback"
+      },
+      image: {
+        rendered: "myWebResultsRenderedCallback"
+      }
+    };
+window.addEventListener("message", function(x){
+    if (x.data.split(".")[0]=="q"){
+getImages(x.data.split(".")[1]);
+    }
+});
+  function getImages(term) {
+  
+    console.log(term);
+    page = 0;
+    urlList = [];
 
- 
-       window.__gcse || (window.__gcse = {});
-window.__gcse.searchCallbacks = {
-  web: {
-    rendered: 'myWebResultsRenderedCallback',
-  },
-    image: {
-    rendered: 'myWebResultsRenderedCallback',
-  },
+    setTimeout(function() {
+      document.getElementsByClassName("gsc-input")[2].value = term;
+      document
+        .getElementsByClassName("gsc-search-button gsc-search-button-v2")[0]
+        .click();
+    }, 900);
+  }
+
+
 };
-  setTimeout(function(){
-   
-  document.getElementsByClassName("gsc-input")[2].value = term;
-document.getElementsByClassName("gsc-search-button gsc-search-button-v2")[0].click();
-  
-
-
-
-},900);
-  
-
-}
-  
-  
-function myWebResultsRenderedCallback(x){
- if (page<4){
-       [...document.getElementsByClassName("gsc-imageResult gsc-imageResult-popup gsc-result")].forEach(function(j){
-       urlList.push(j.children[0].children[0].children[0].children[0].children[0].src);
-       });
-page++;
-document.getElementsByClassName("gsc-cursor")[0].children[page].click();
- }else{
-       console.log(urlList);
-top.postMessage(urlList,"*");
- }
-};
-  getImages("test");
-}
+  function myWebResultsRenderedCallback(x) {
+    console.log(page);
+    if (page < 4) {
+      [
+        ...document.getElementsByClassName(
+          "gsc-imageResult gsc-imageResult-popup gsc-result"
+        )
+      ].forEach(function(j) {
+        urlList.push(
+          j.children[0].children[0].children[0].children[0].children[0].src
+        );
+      });
+      page++;
+      document.getElementsByClassName("gsc-cursor")[0].children[page].click();
+    } else {
+      console.log(urlList);
+      top.postMessage(urlList, "*");
+    }
+  }
