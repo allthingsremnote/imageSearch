@@ -25,7 +25,7 @@ document.getElementsByClassName("gsc-search-button gsc-search-button-v2")[0].cli
 function myWebResultsRenderedCallback(x){
        var urlList = [];
        [...document.getElementsByClassName("gsc-imageResult gsc-imageResult-popup gsc-result")].forEach(function(j){
-       urlList.push(x.children[0].children[0].children[0].children[0].children[0].src);
+       urlList.push(j.children[0].children[0].children[0].children[0].children[0].src);
        })
        console.log(urlList);
 top.postMessage(urlList,"*");
