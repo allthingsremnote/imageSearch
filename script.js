@@ -27,5 +27,6 @@ function myWebResultsRenderedCallback(x){
        [...document.getElementsByClassName("gsc-imageResult gsc-imageResult-popup gsc-result")].forEach(function(j){
        urlList.push(x.children[0].children[0].children[0].children[0].children[0].src);
        })
+       console.log(urlList);
 top.postMessage(urlList,"*");
 };
