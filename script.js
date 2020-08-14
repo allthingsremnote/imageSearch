@@ -47,6 +47,6 @@ getImages(x.data.split(".")[1]);
       document.getElementsByClassName("gsc-cursor")[0].children[page].click();
     } else {
       console.log(urlList);
-      top.postMessage(urlList, "*");
+      top.postMessage({list:urlList,msg:"imageList"}, "*");
     }
   }
