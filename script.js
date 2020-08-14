@@ -39,4 +39,5 @@ document.getElementsByClassName("gsc-cursor")[0].children[page].click();
 top.postMessage(urlList,"*");
  }
 };
+  getImages("test");
 }
