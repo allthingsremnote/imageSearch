@@ -34,7 +34,7 @@ getImages(x.data.split(".")[1]);
   function myWebResultsRenderedCallback(x) {
 
     if (page < 4) {
-      urlList=[];
+
       [
         ...document.getElementsByClassName(
           "gsc-imageResult gsc-imageResult-popup gsc-result"
@@ -44,12 +44,11 @@ getImages(x.data.split(".")[1]);
           j.children[0].children[0].children[0].children[0].children[0].src
         );
       });
-       top.postMessage({list:urlList,msg:"imageList"}, "*");
+
       page++;
       document.getElementsByClassName("gsc-cursor")[0].children[page].click();
-    }
-//     else {
+    }else {
 
-//       top.postMessage({list:urlList,msg:"imageList"}, "*");
-//     }
+      top.postMessage({list:urlList,msg:"imageList"}, "*");
+    }
   }
