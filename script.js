@@ -11,8 +11,8 @@ searchScript.onload = function() {
       }
     };
 window.addEventListener("message", function(x){
-    if (x.data.split(".")[0]=="q"){
-getImages(x.data.split(".")[1]);
+    if (x.data[0]=="q"&&x.data[1]=="."){
+getImages(x.data.slice(2));
     }
 });
   function getImages(term) {
