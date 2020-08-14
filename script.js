@@ -17,7 +17,7 @@ getImages(x.data.split(".")[1]);
 });
   function getImages(term) {
   
-    console.log(term);
+
     page = 0;
     urlList = [];
 
@@ -32,7 +32,7 @@ getImages(x.data.split(".")[1]);
 
 };
   function myWebResultsRenderedCallback(x) {
-    console.log(page);
+
     if (page < 4) {
       [
         ...document.getElementsByClassName(
@@ -46,7 +46,7 @@ getImages(x.data.split(".")[1]);
       page++;
       document.getElementsByClassName("gsc-cursor")[0].children[page].click();
     } else {
-      console.log(urlList);
+
       top.postMessage({list:urlList,msg:"imageList"}, "*");
     }
   }
