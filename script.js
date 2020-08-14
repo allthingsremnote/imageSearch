@@ -1,11 +1,6 @@
 searchScript.onload = function(){
   setTimeout(function(){
-  document.getElementsByClassName("gsc-input")[2].value = location.hash.slice(1);
-document.getElementsByClassName("gsc-search-button gsc-search-button-v2")[0].click();
-  
-
-
-  window.__gcse || (window.__gcse = {});
+      window.__gcse || (window.__gcse = {});
 window.__gcse.searchCallbacks = {
   web: {
     rendered: 'myWebResultsRenderedCallback',
@@ -14,6 +9,12 @@ window.__gcse.searchCallbacks = {
     rendered: 'myWebResultsRenderedCallback',
   },
 };  
+  document.getElementsByClassName("gsc-input")[2].value = location.hash.slice(1);
+document.getElementsByClassName("gsc-search-button gsc-search-button-v2")[0].click();
+  
+
+
+
 },900);
   
   
