@@ -16,25 +16,16 @@ getImages(x.data.slice(2));
     }
 });
   function getImages(term) {
-  
-
     page = 0;
     urlList = [];
-
-
       document.getElementsByClassName("gsc-input")[2].value = term;
       document
         .getElementsByClassName("gsc-search-button gsc-search-button-v2")[0]
         .click();
-
   }
-
-
 };
   function myWebResultsRenderedCallback(x) {
-
     if (page < 4) {
-
       [
         ...document.getElementsByClassName(
           "gsc-imageResult gsc-imageResult-popup gsc-result"
@@ -48,7 +39,6 @@ getImages(x.data.slice(2));
       page++;
       document.getElementsByClassName("gsc-cursor")[0].children[page].click();
     }else {
-
       top.postMessage({list:urlList,msg:"imageList"}, "*");
     }
   }
